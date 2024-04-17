@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main (int argc, char *argv[]){
-	if(argv[1] == "main"){
+	if(strcmp(argv[1], "main") == 0){
 		int a;
 		a = atoi(argv[2]);
 		if(a<4){
@@ -39,8 +39,9 @@ int main (int argc, char *argv[]){
 		}
 		else {
 			printf("provide number of expeditions");
-		}}}else if(argv[1] == "support"){
-		int a;
+		}
+     else if(strcmp(argv[1], "support") == 0){
+	int a;
 		a = atoi(argv[2]);
 		if(a<4){
 			printf("need 2");
@@ -50,8 +51,8 @@ int main (int argc, char *argv[]){
 		}
 		else {
 			printf("provide number of expeditions");
-	}
+	}}
 	else {
 		printf("type main or support \n");
 	}
-	}
+	}}
