@@ -39,7 +39,7 @@ int main (int argc, char *argv[]){
 		}
 		else {
 			printf("provide number of expeditions");
-		}
+		}}
      else if(strcmp(argv[1], "support") == 0){
 	int a;
 		a = atoi(argv[2]);
@@ -55,4 +55,4 @@ int main (int argc, char *argv[]){
 	else {
 		printf("type main or support \n");
 	}
-	}}
+	}
