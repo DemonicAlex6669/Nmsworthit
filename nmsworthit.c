@@ -1,71 +1,63 @@
 #include <stdio.h>
 
 int main (int argc, char *argv[]){
-	if(strcmp(argv[1], "main") == 0){
-		int a;
-		a = atoi(argv[2]);
-		if(a<4){
-			printf("need 20\n");
-		}
-		else if(a<8){
-			printf("need 21\n");
-		}
-		else if(a<15){
-			printf("need 22\n");
-		}
-		else if(a<25){
-			printf("need 24\n");
-		}
-		else if(a<30){
-			printf("need 25\n");
-		}
-		else if(a<35){
-			printf("need 27\n");
-		}
-		else if(a<40){
-			printf("need 29\n");
-		}
-		else if(a<45){
-			printf("need 30\n");
-		}
-		else if(a<50){
-			printf("need 32\n");
-		}
-		else if(a<55){
-			printf("need 33\n");
-		}
-		else if(a>55){
-			printf("need 35\n");
-		}
-		else {
-			printf("provide number of expeditions\n");
-		}}
 	typedef struct chart
 	{
 	int expedition;
-	int stat
+	int stat;
 	struct chart *next;
 	} chart;
 
 	chart *list = NULL;
+
+	int expd_value[11] = 4, 8, 15, 25, 30, 35, 40, 45, 50, 55, 100 ;
+	int stat_value[11] = 20, 21, 22, 24, 25, 27, 29, 30, 32, 33, 35 ;
 	
+	for (int i=0; i<11; i++)
+	{
+	int x = expd_value[i];
+	int y = stat_value[i];
+
 	chart *n = malloc(sizeof(chart));
-	if (n == NULL)
-	{
-	return 1;
-	}
-	n->expedition = 
-	n->stat =
+		if (n == NULL)
+		{
+		return 1;
+		}
+	n->expedition = x;
+	n->stat = y;
 	n->next = NULL;
-
-
-        if (argv[2] < chart.expedition)
+	}
+	if (list == NULL)
 	{
-        
+	list = n;
 	}
 	else
 	{
-	
+		for (chart *ptr = list; ptr != NULL;ptr =  ptr->next)
+		{
+			if (ptr->next == NULL)
+			{
+			ptr->next = n;
+			break;
+			}
+		}
+
+	}
+
+
+        for (chart *pt =list; pt != NULL; pt =  pt->next)
+	{
+	int i = 0;
+	int x = expd_value[i];
+        int y = stat_value[i];
+		if ( pt->expedition > x) 
+		{
+		printf("good buy\n");
+		}
+		else
+		{
+
+		}
 	}
      else if(strcmp(argv[1], "support") == 0){
 	int a;
