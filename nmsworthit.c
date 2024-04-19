@@ -8,7 +8,7 @@ int main (int argc, char *argv[]){
 			printf("need 20\n");
 		}
 		else if(a<8){
-			printf("need 2\n1");
+			printf("need 21\n");
 		}
 		else if(a<15){
 			printf("need 22\n");
@@ -40,6 +40,33 @@ int main (int argc, char *argv[]){
 		else {
 			printf("provide number of expeditions\n");
 		}}
+	typedef struct chart
+	{
+	int expedition;
+	int stat
+	struct chart *next;
+	} chart;
+
+	chart *list = NULL;
+	
+	chart *n = malloc(sizeof(chart));
+	if (n == NULL)
+	{
+	return 1;
+	}
+	n->expedition = 
+	n->stat =
+	n->next = NULL;
+
+
+        if (argv[2] < chart.expedition)
+	{
+        
+	}
+	else
+	{
+	
+	}
      else if(strcmp(argv[1], "support") == 0){
 	int a;
 		a = atoi(argv[2]);
