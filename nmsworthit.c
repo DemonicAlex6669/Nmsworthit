@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 int main (int argc, char *argv[]){
+	//chosing if its a support ship or not (main=not)
 	if(strcmp(argv[1], "main") == 0)
 	{
 
@@ -56,15 +57,19 @@ int main (int argc, char *argv[]){
 		a = atoi(argv[2]);
 		int b;
 		b = atoi(argv[3]);
+		//compareing entered expedition stat to the chart
 			if ( pt->expedition > a) 
 			{
+				//compare entered main ship stat to chart
 				if (pt->stat <= b )
 				{
+				//entered stat is higher or equal then chart
 				printf("good buy\n");
 				return 0;
 				}
 				else if (pt->next == NULL)
 				{
+				//entered stat is lower
 				printf("bad buy\n");
 				return 0;
 				}
@@ -128,6 +133,7 @@ int main (int argc, char *argv[]){
 		int d;
 		int e;
 		int f;
+		//averaging the four stats entered
 		c = atoi(argv[3]);
 		d = atoi(argv[4]);
 		e = atoi(argv[5]);
@@ -137,13 +143,16 @@ int main (int argc, char *argv[]){
 		
 			if ( pt->expedition > a) 
 			{
+			//compare entered expedition to chart
 				if (pt->stat <= b )
 				{
+				//averaged stat is higher or equal
 				printf("good buy\n");
 				return 0;
 				}
 				else if (pt->next == NULL)
 				{
+				//entered stat is lower
 				printf("bad buy\n");
 				return 0;
 				}
