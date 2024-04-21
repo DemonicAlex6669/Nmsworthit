@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main (int argc, char *argv[]){
-	//chosing if its a support ship or not (main=not)
-	if(strcmp(argv[1], "main") == 0)
-	{
 
 		typedef struct chart
 		{
@@ -13,7 +9,49 @@ int main (int argc, char *argv[]){
 		struct chart *next;
 		} chart;
 
-		chart *list = NULL;
+int main (int argc, char *argv[]){
+	//chosing if its a support ship or not (main=not)
+	if(strcmp(argv[1], "main") == 0)
+	{
+		typedef struct list_node list_node;
+
+		typedef struct list
+		{
+		list_node *head;
+		list_node *tail;
+		}list;
+
+		struct list_node
+		{
+		int expedition;
+		int stat;
+		list_node *next;
+		};
+
+		list *list_create(void)
+		{
+		list *res = malloc(sizeof(list_node));
+		if (res == NULL)
+		return res;
+		res->head = NULL;
+		res->tail = NULL;
+		}
+
+		int list_append(list *l, int expd, int stat)
+		{
+		list_node *n = malloc(sizeof(list_node));
+		if (n == NULL) return -1;
+		if (l->head == NULL)
+		{
+		l->head =n;
+		}
+		if (l->head != NULL)
+		{
+		l->tail->next = n;
+		}
+		l->tail = n;
+		return 0;
+		}
 
 		int expd_value[11] = {4, 8, 15, 25, 30, 35, 40, 45, 50, 55, 100} ;
 		int stat_value[11] = {20, 21, 22, 24, 25, 27, 29, 30, 32, 33, 35} ;
@@ -22,36 +60,12 @@ int main (int argc, char *argv[]){
 		{
 		int x = expd_value[i];
 		int y = stat_value[i];
-
-		chart *n = malloc(sizeof(chart));
-			if (n == NULL)
-			{
-			return 1;
-			}
-		n->expedition = x;
-		n->stat = y;
-		n->next = NULL;
-		
-			if (list == NULL)
-			{
-			list = n;
-			}
-			else
-			{
-				for (chart *ptr = list; ptr != NULL;ptr =  ptr->next)
-				{
-					if (ptr->next == NULL)
-					{
-					ptr->next = n;
-					break;
-					}
-				}
-
-			}
+		int res = list_append(*l, x, y);
+		if (res != 0)
+		return 1;
 		}
 
-
-		for (chart *pt =list; pt != NULL; pt =  pt->next)
+		for (list *pt = list->list_node->head->list_node; pt != NULL; pt =  pt->next)
 		{
 		int a;
 		a = atoi(argv[2]);
@@ -78,14 +92,7 @@ int main (int argc, char *argv[]){
 	}
 
      else if(strcmp(argv[1], "support") == 0)
-	{
-	 
-		typedef struct chart
-		{
-		int expedition;
-		int stat;
-		struct chart *next;
-		} chart;
+	{ 
 
 		chart *list = NULL;
 
