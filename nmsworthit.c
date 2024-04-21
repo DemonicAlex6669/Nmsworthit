@@ -53,10 +53,8 @@ int main (int argc, char *argv[]){
 
 		for (chart *pt =list; pt != NULL; pt =  pt->next)
 		{
-		int a;
-		a = atoi(argv[2]);
-		int b;
-		b = atoi(argv[3]);
+		int a = atoi(argv[2]);
+		int b = atoi(argv[3]);
 		//compareing entered expedition stat to the chart
 			if ( pt->expedition > a) 
 			{
@@ -127,19 +125,14 @@ int main (int argc, char *argv[]){
 
 		for (chart *pt =list; pt != NULL; pt =  pt->next)
 		{
-		int a;
-		a = atoi(argv[2]);
-		int c;
-		int d;
-		int e;
-		int f;
+		int a = atoi(argv[2]);
 		//averaging the four stats entered
-		c = atoi(argv[3]);
-		d = atoi(argv[4]);
-		e = atoi(argv[5]);
-		f = atoi(argv[6]);
-		float b;
-		b = ((float)c + (float)d + (float)e + (float)f)/4;
+		int c = atoi(argv[3]);
+		int d = atoi(argv[4]);
+		int e = atoi(argv[5]);
+		int f = atoi(argv[6]);
+		float b = ((float)c + (float)d + (float)e + (float)f)/4.0;
+
 		
 			if ( pt->expedition > a) 
 			{
