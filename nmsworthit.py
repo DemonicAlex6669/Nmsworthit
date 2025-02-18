@@ -15,7 +15,9 @@ class ship(...):
 
 def main():
     parser = argparse.ArgumentParser(description = "find of a ship should be bought")
-    parser.add_argument()
+    parser.add_argument("-e", help= "expidition number")
+    parser.add_argument("-m", help= "main stat for a sjip")
+    paeser.add_argument("-s", nargs=4, help= "the four stats for a support ship")
     args = parser.parse_args()
 
     ...
